@@ -1,16 +1,16 @@
 # AI-Powered CV & Cover-Letter Generator
 
-A command-line tool that takes your **`profile.json`** and a job description, uses the OpenAI API to optimise your CV for Applicant Tracking Systems (ATS), renders a LaTeX template, and outputs a high-quality PDF résumé.
+A command-line tool that takes your `profile.json` and a job description, uses the OpenAI API to generate a tailored, ATS-optimized CV **and** a formal cover letter, compiles both from LaTeX templates, and outputs professional PDF files.
 
 ---
 
 ## 🔍 Features
 
-- **Strict mode** – exact ATS-friendly wording (no new content)  
-- **Creative mode** – human-friendly rewording **plus** ATS optimisation  
-- Automatically highlights your **top 6 most relevant skills**  
-- Professional, fully customisable **LaTeX** styling → polished PDF output  
-- Clean, prompt-driven **CLI** workflow
+- ✅ **Strict mode**: ATS-optimized CV without adding any new content  
+- ✅ **Creative mode**: Improves clarity and rewords slightly while remaining ATS-friendly  
+- ✅ Generates a professional **cover letter body** based strictly on your profile  
+- ✅ Clean, customizable **LaTeX** templates for both CV and cover letter  
+- ✅ Produces print-ready **PDF files** in seconds
 
 ---
 
@@ -28,7 +28,7 @@ A command-line tool that takes your **`profile.json`** and a job description, us
    ```bash
    cp .env.example .env
    ```
-   Then open `.env` in a text editor and set:
+   Then open `.env` and set:
    ```
    OPENAI_API_KEY=your_api_key_here
    ```
@@ -41,7 +41,7 @@ A command-line tool that takes your **`profile.json`** and a job description, us
 
 4. **Install LaTeX (`pdflatex`)**
 
-   You need a working LaTeX installation. Here’s how to install it:
+   You need a working LaTeX installation:
 
    - **Ubuntu / Debian**
      ```bash
@@ -49,7 +49,7 @@ A command-line tool that takes your **`profile.json`** and a job description, us
      sudo apt install texlive-latex-base texlive-fonts-recommended texlive-latex-extra
      ```
 
-   - **macOS (with Homebrew)**
+   - **macOS (Homebrew)**
      ```bash
      brew install --cask mactex-no-gui
      ```
@@ -59,40 +59,58 @@ A command-line tool that takes your **`profile.json`** and a job description, us
 
 5. **Prepare your input files**
 
-   - `profile.json` — your personal data, education, experience, skills, etc.  
-   - `job_description.txt` — plain text job advertisement or description
-
-6. **Run the generator**
-
-   ```bash
-   python generate_cv.py
-   ```
-
-   When prompted, choose a generation mode:
-   ```
-   Which mode do you want to use? (strict/creative):
-   ```
-
-7. **View the output**
-
-   Your generated CV will be saved as:
-   ```
-   generated_cv.pdf
-   ```
+   - `profile.json` — your structured profile (name, contact info, education, experience, etc.)
+   - `job_description.txt` — plain text job ad
 
 ---
 
-## ⚙️ Project Structure
+## 📄 How to Generate Your CV
+
+```bash
+python generate_cv.py
+```
+
+You’ll be prompted to choose between:
+
+```
+Which mode do you want to use? (strict/creative):
+```
+
+Once completed, your CV will be saved as:
+
+```
+generated_cv.pdf
+```
+
+---
+
+## 📨 How to Generate Your Cover Letter
+
+```bash
+python generate_cover_letter.py
+```
+
+This generates a personalized cover letter and saves the output as:
+
+```
+cover_letter.pdf
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 .
-├── generate_cv.py            # Main script
-├── modern_cv_template.tex    # Jinja2-powered LaTeX template
-├── profile.json              # Example user profile
-├── job_description.txt       # Example job description
-├── requirements.txt          # Python dependencies
-├── .env.example              # Template for API key
-└── README.md                 # This file
+├── generate_cv.py               # CV generator script
+├── generate_cover_letter.py     # Cover letter generator script
+├── modern_cv_template.tex       # LaTeX CV template
+├── cover_letter_template.tex    # LaTeX cover letter template
+├── profile.json                 # Your profile data
+├── job_description.txt          # Job ad to match
+├── requirements.txt             # Python dependencies
+├── .env.example                 # Sample .env file
+└── README.md                    # This file
 ```
 
 ---
@@ -105,7 +123,7 @@ A command-line tool that takes your **`profile.json`** and a job description, us
 - `jinja2`
 - `python-dotenv`
 
-Install with:
+Install them with:
 
 ```bash
 pip install -r requirements.txt
@@ -113,24 +131,24 @@ pip install -r requirements.txt
 
 ### System tools
 
-- `pdflatex` (LaTeX engine for compiling PDFs)
-- `git` (for cloning and version control)
+- `pdflatex` (from TeX Live, MacTeX, or MiKTeX)
+- `git` (optional, for cloning)
 
 ---
 
 ## ✏️ Customization
 
-| To change...                     | Edit...                       |
-|----------------------------------|-------------------------------|
-| Layout / fonts / styling         | `modern_cv_template.tex`      |
-| GPT prompt logic and behavior    | `generate_cv.py`              |
-| Number of displayed skills       | Slice line: `skills = all_skills[:6]` |
+| To change...                     | Edit...                          |
+|----------------------------------|----------------------------------|
+| Layout or styling                | `*.tex` templates                |
+| GPT behavior or instructions     | Prompt strings in Python scripts |
+| Number of skills shown in CV     | `skills = all_skills[:6]`       |
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -139,4 +157,6 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 - Powered by the [OpenAI API](https://platform.openai.com)
 - Built with [Jinja2](https://jinja.palletsprojects.com/) and [LaTeX](https://www.latex-project.org)
 
-Happy résumé-building! 🚀
+---
+
+🎯 Build your best CV and cover letter — ready to impress recruiters and beat the bots.
