@@ -1,98 +1,142 @@
-# AI-CV-Generator
+# AI-Powered CV & Cover-Letter Generator
 
+A command-line tool that takes your **`profile.json`** and a job description, uses the OpenAI API to optimise your CV for Applicant Tracking Systems (ATS), renders a LaTeX template, and outputs a high-quality PDF résumé.
 
-AI-Powered CV & Cover-Letter Generator
-A command-line tool that takes your profile JSON and a job description, calls OpenAI to optimize your CV for ATS, renders a LaTeX template, and compiles a beautifully formatted PDF résumé.
+---
 
-🔍 Features
-Strict mode for exact ATS-friendly formatting (no new content).
+## 🔍 Features
 
-Creative mode for human-friendly rewording + ATS optimization.
+- **Strict mode** – exact ATS-friendly wording (no new content)  
+- **Creative mode** – human-friendly rewording **plus** ATS optimisation  
+- Automatically highlights your **top 6 most relevant skills**  
+- Professional, fully customisable **LaTeX** styling → polished PDF output  
+- Clean, prompt-driven **CLI** workflow
 
-Auto-filters to show your top 6 most relevant skills.
+---
 
-LaTeX template–based styling → high-quality PDF output.
+## 🚀 Quick Start
 
-Simple CLI interaction.
+1. **Clone the repository**
 
-🚀 Quick Start
-Clone the repo
-git clone https://github.com/yourusername/AI-CV-CoverGen.git
-cd AI-CV-CoverGen
+   ```bash
+   git clone https://github.com/yourusername/AI-CV-Generator.git
+   cd AI-CV-Generator
+   ```
 
-Configure your environment
-Copy .env.example to .env, then add your OpenAI API key:
-cp .env.example .env
+2. **Add your OpenAI API key**
 
-edit .env and set OPENAI_API_KEY=your_api_key_here
-Install dependencies
-pip install -r requirements.txt
+   ```bash
+   cp .env.example .env
+   ```
+   Then open `.env` in a text editor and set:
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
 
-Ensure LaTeX is installed
-You need a working TeX distribution with pdflatex.
+3. **Install Python dependencies**
 
-Ubuntu/Debian
-sudo apt update
-sudo apt install texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-macOS (with Homebrew)
-brew install --cask mactex-no-gui
+4. **Install LaTeX (`pdflatex`)**
 
-Prepare your inputs
+   You need a working LaTeX installation. Here’s how to install it:
 
-profile.json — your personal data, education, experience, etc.
+   - **Ubuntu / Debian**
+     ```bash
+     sudo apt update
+     sudo apt install texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+     ```
 
-job_description.txt — plain-text job posting.
+   - **macOS (with Homebrew)**
+     ```bash
+     brew install --cask mactex-no-gui
+     ```
 
-Run the generator
-python generate_cv.py
-You’ll be prompted for mode:
+   - **Windows**
+     Download and install [MiKTeX](https://miktex.org/download)
 
-vbnet
-Kopyala
-Düzenle
-Which mode do you want to use? (strict/creative):
-View your résumé
-After compilation, open generated_cv.pdf in your default PDF viewer.
+5. **Prepare your input files**
 
-⚙️ Project Structure
+   - `profile.json` — your personal data, education, experience, skills, etc.  
+   - `job_description.txt` — plain text job advertisement or description
+
+6. **Run the generator**
+
+   ```bash
+   python generate_cv.py
+   ```
+
+   When prompted, choose a generation mode:
+   ```
+   Which mode do you want to use? (strict/creative):
+   ```
+
+7. **View the output**
+
+   Your generated CV will be saved as:
+   ```
+   generated_cv.pdf
+   ```
+
+---
+
+## ⚙️ Project Structure
+
+```
 .
-├── modern_cv_template.tex # Jinja2-powered LaTeX template
-├── generate_cv.py # Main script
-├── profile.json # Example profile
-├── job_description.txt # Example job posting
-├── requirements.txt # Python dependencies
-├── .env.example # Template for your OpenAI key
-└── README.md # You are here
+├── generate_cv.py            # Main script
+├── modern_cv_template.tex    # Jinja2-powered LaTeX template
+├── profile.json              # Example user profile
+├── job_description.txt       # Example job description
+├── requirements.txt          # Python dependencies
+├── .env.example              # Template for API key
+└── README.md                 # This file
+```
 
-🛠️ Dependencies
-Python packages
-openai
+---
 
-jinja2
+## 🛠️ Dependencies
 
-python-dotenv
+### Python packages
 
-(Install with pip install -r requirements.txt)
+- `openai`
+- `jinja2`
+- `python-dotenv`
 
-System tools
-pdflatex (part of any standard LaTeX distribution)
+Install with:
 
-Git (for cloning and version control)
+```bash
+pip install -r requirements.txt
+```
 
-✏️ Customization
-Template: edit modern_cv_template.tex (Jinja2 tags) to adjust layout, fonts, colors.
+### System tools
 
-Prompt logic: tweak the prompt strings inside generate_cv.py to suit your tone or ATS rules.
+- `pdflatex` (LaTeX engine for compiling PDFs)
+- `git` (for cloning and version control)
 
-Skill filtering: change the number of skills shown by modifying the slicing logic in the script.
+---
 
-📄 License
-This project is released under the MIT License.
+## ✏️ Customization
 
-🙏 Acknowledgments
-Uses the OpenAI API for text generation.
+| To change...                     | Edit...                       |
+|----------------------------------|-------------------------------|
+| Layout / fonts / styling         | `modern_cv_template.tex`      |
+| GPT prompt logic and behavior    | `generate_cv.py`              |
+| Number of displayed skills       | Slice line: `skills = all_skills[:6]` |
 
-Built on top of Jinja2 and LaTeX for flexible, professional formatting.
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
+## 🙏 Acknowledgements
+
+- Powered by the [OpenAI API](https://platform.openai.com)
+- Built with [Jinja2](https://jinja.palletsprojects.com/) and [LaTeX](https://www.latex-project.org)
 
 Happy résumé-building! 🚀
