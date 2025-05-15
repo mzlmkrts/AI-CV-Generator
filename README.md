@@ -1,1 +1,1 @@
-# ai_cv_coverletter_generator
+# AI-CV-Generator
