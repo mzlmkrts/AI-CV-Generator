@@ -1,0 +1,78 @@
+{
+  "name": "Morgan Mars Everly",
+  "email": "morgan.mars.everly@fictemail.com",
+  "webpage": "https://morganmarseverly.ai",
+  "location": "Everton, Fantasia",
+  "github": "https://github.com/morganmarseverly",
+  "phone": "+123456789",
+  "education": [
+    {
+      "degree": "B.Sc. in Software Engineering",
+      "institution": "Fantasia Institute of Technology",
+      "year": "2017"
+    },
+    {
+      "degree": "M.Sc. in Artificial Intelligence",
+      "institution": "Jupyter University",
+      "year": "2019"
+    },
+    {
+      "degree": "Professional Diploma in Data Analytics",
+      "institution": "Global Online Academy",
+      "year": "2021"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Machine Learning Engineer",
+      "company": "Saturn Labs",
+      "years": "2019 - 2022",
+      "details": [
+        "Designed and trained convolutional neural networks for image classification tasks",
+        "Built end-to-end data pipelines using Apache Kafka and Spark for real-time data processing",
+        "Optimized model inference on edge devices, reducing latency by 40%",
+        "Collaborated with product teams to integrate AI features into mobile applications",
+        "Authored technical documentation and led knowledge-transfer workshops",
+        "Implemented unit and integration tests to ensure code reliability"
+      ]
+    },
+    {
+      "position": "Lead Data Scientist",
+      "company": "Quantum DataWorks",
+      "years": "2022 - Present",
+      "details": [
+        "Leading a team of data scientists to develop NLP solutions for automated report generation",
+        "Architected scalable ETL frameworks in AWS using Lambda and Glue services",
+        "Conducting A/B experiments and statistical analyses to measure model impact",
+        "Deployed RESTful API endpoints with Flask and Docker containers",
+        "Mentoring junior staff and conducting monthly AI knowledge-sharing sessions"
+      ]
+    }
+  ],
+  "skills": [
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "SQL",
+    "Matplotlib",
+    "Seaborn",
+    "Keras",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Azure",
+    "Git",
+    "CI/CD",
+    "Natural Language Processing"
+  ],
+  "Languages": [
+    "English",
+    "Spanish",
+    "German",
+    "Mandarin",
+    "Esperanto"
+  ]
+}

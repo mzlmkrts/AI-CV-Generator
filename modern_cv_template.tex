@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    pdfborder={0 0 0}
+}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\usepackage{titlesec}
+% Reduce the space *after* every \section (including *-forms) to zero:
+\titlespacing*{\section}{0pt}{0pt}{5pt}
+
+\begin{document}
+
+% === HEADER ===
+\begin{center}
+    \Huge \textbf{ {{ name }} (Ph.D.) } \\
+    \vspace{0.2cm}
+    \normalsize
+    {{ email }} \quad $|$ \quad {{ phone }} \\
+    \href{\detokenize{ {{ webpage }} }}{Webpage} \quad $|$
+    \href{\detokenize{ {{ github }} }}{GitHub} \quad $|$
+    {{ location }} \\
+    \vspace{0.8cm}
+\end{center}
+
+% === ABOUT ME ===
+\section*{About Me}
+%\vspace{-0.8em}
+{{ about_me }}
+\vspace{0.5em}
+
+
+% === COLUMNS ===
+\begin{multicols}{2}
+
+% === SKILLS ===
+\section*{Skills}
+
+{% if skills %}
+\begin{itemize}[leftmargin=*]
+{% for skill in skills %}
+    \item {{ skill }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+
+
+\columnbreak
+
+% === EDUCATION ===
+\section*{Education}
+{% for edu in education %}
+\textbf{ {{ edu.degree }} } \\
+{{ edu.institution }} \hfill {{ edu.year }} \\
+\vspace{0.4cm}
+{% endfor %}
+
+\end{multicols}
+
+\vspace{0.5cm}
+
+% === EXPERIENCE ===
+\section*{Experience}
+{% for exp in experience %}
+\textbf{ {{ exp.position }} } \hfill {{ exp.years }} \\
+\textit{ {{ exp.company }} } \\
+\vspace{-0.5cm}
+{% if exp.details %}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+{% for detail in exp.details %}
+    \item {{ detail }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+\vspace{0.5cm}
+{% endfor %}
+
+% === LANGUAGES ===
+\section*{Languages}
+{% if Languages %}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+{% for lang in Languages %}
+    \item {{ lang }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+
+\end{document}

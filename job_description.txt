@@ -1,0 +1,25 @@
+Key Responsibilities
+Model Development & Training
+Architect and implement deep learning and classical ML models (e.g., CNNs, transformer networks) using TensorFlow, PyTorch, and Scikit-learn
+Conduct feature engineering, hyperparameter tuning, and model evaluation on large datasets with Pandas and NumPy
+Data Infrastructure & Pipelines
+Build scalable ETL and streaming data workflows leveraging Apache Kafka, Spark, and containerized microservices (Docker, Kubernetes)
+Automate data ingestion, preprocessing, and monitoring in AWS (Lambda, Glue) and Azure environments
+Deployment & Monitoring
+Containerize models and deploy RESTful APIs using Flask, Docker, and Kubernetes for high-availability inference
+Set up CI/CD pipelines (GitLab CI, GitHub Actions) to streamline testing, packaging, and release cycles
+Implement production monitoring dashboards with Prometheus, Grafana, and visualizations via Matplotlib or Seaborn
+Cross-Functional Collaboration
+Partner with product owners to translate business requirements into technical solutions
+Mentor and code-review junior engineers; lead knowledge-sharing workshops on best practices and new technologies
+Prepare technical documentation and present model insights to stakeholders
+Required Qualifications
+B.Sc./M.Sc. in Computer Science, Data Science, or related field
+4+ years’ hands-on experience in machine learning and deep learning engineering
+Proficiency in Python, with extensive use of TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy
+Strong understanding of NLP concepts (tokenization, embedding, transformer architectures)
+Experience containerizing applications with Docker and orchestrating with Kubernetes
+Solid background in cloud-native deployments on AWS and/or Azure
+Familiarity with SQL and relational databases
+Demonstrated ability to implement CI/CD workflows and automated testing
+Excellent problem-solving skills and clear communication in English
