@@ -1,16 +1,16 @@
 # AI-Powered CV & Cover-Letter Generator
 
-A command-line tool that takes your `profile.json` and a job description, uses the OpenAI API to generate a tailored, ATS-optimized CV **and** a formal cover letter, compiles both from LaTeX templates, and outputs professional PDF files.
+A command-line tool that takes your `profile.json` and a job description, uses the OpenAI API to generate a tailored, ATS-optimized **CV** and **cover letter**, compiles them from LaTeX templates, and outputs professional PDF files.
 
 ---
 
 ## 🔍 Features
 
-- ✅ **Strict mode**: ATS-optimized CV without adding any new content  
-- ✅ **Creative mode**: Improves clarity and rewords slightly while remaining ATS-friendly  
-- ✅ Generates a professional **cover letter body** based strictly on your profile  
-- ✅ Clean, customizable **LaTeX** templates for both CV and cover letter  
-- ✅ Produces print-ready **PDF files** in seconds
+- ✅ **Strict mode**: ATS-optimized CV using only your data  
+- ✅ **Creative mode**: Enhanced readability while remaining factual and ATS-friendly  
+- ✅ Generates a personalized **cover letter** using real profile content only  
+- ✅ Clean, customizable **LaTeX** templates  
+- ✅ Produces high-quality **PDFs** for CV and cover letter
 
 ---
 
@@ -64,19 +64,21 @@ A command-line tool that takes your `profile.json` and a job description, uses t
 
 ---
 
-## 📄 How to Generate Your CV
+## 📄 Generate Your CV
+
+Run the CV generation script:
 
 ```bash
 python generate_cv.py
 ```
 
-You’ll be prompted to choose between:
+You'll be asked:
 
 ```
 Which mode do you want to use? (strict/creative):
 ```
 
-Once completed, your CV will be saved as:
+The result is saved as:
 
 ```
 generated_cv.pdf
@@ -84,13 +86,15 @@ generated_cv.pdf
 
 ---
 
-## 📨 How to Generate Your Cover Letter
+## 📨 Generate Your Cover Letter
+
+Run the cover letter generation script:
 
 ```bash
-python generate_cover_letter.py
+python my_cover_letter.py
 ```
 
-This generates a personalized cover letter and saves the output as:
+This uses GPT-4 to generate a short, formal letter body from your `profile.json` and `job_description.txt`, then compiles the final version as:
 
 ```
 cover_letter.pdf
@@ -103,13 +107,13 @@ cover_letter.pdf
 ```
 .
 ├── generate_cv.py               # CV generator script
-├── generate_cover_letter.py     # Cover letter generator script
+├── my_cover_letter.py           # Cover letter generator script
 ├── modern_cv_template.tex       # LaTeX CV template
 ├── cover_letter_template.tex    # LaTeX cover letter template
 ├── profile.json                 # Your profile data
-├── job_description.txt          # Job ad to match
+├── job_description.txt          # Job ad description
 ├── requirements.txt             # Python dependencies
-├── .env.example                 # Sample .env file
+├── .env.example                 # Sample environment file
 └── README.md                    # This file
 ```
 
@@ -117,7 +121,7 @@ cover_letter.pdf
 
 ## 🛠️ Dependencies
 
-### Python packages
+### Python Packages
 
 - `openai`
 - `jinja2`
@@ -129,7 +133,7 @@ Install them with:
 pip install -r requirements.txt
 ```
 
-### System tools
+### System Tools
 
 - `pdflatex` (from TeX Live, MacTeX, or MiKTeX)
 - `git` (optional, for cloning)
@@ -138,25 +142,25 @@ pip install -r requirements.txt
 
 ## ✏️ Customization
 
-| To change...                     | Edit...                          |
-|----------------------------------|----------------------------------|
-| Layout or styling                | `*.tex` templates                |
-| GPT behavior or instructions     | Prompt strings in Python scripts |
-| Number of skills shown in CV     | `skills = all_skills[:6]`       |
+| To change...                        | Edit...                          |
+|------------------------------------|----------------------------------|
+| CV or letter layout & fonts        | `.tex` template files            |
+| GPT prompt rules / tone            | Inside `generate_cv.py` or `my_cover_letter.py` |
+| Number of skills shown in CV       | Line: `skills = all_skills[:6]`  |
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License**. See `LICENSE` for details.
 
 ---
 
 ## 🙏 Acknowledgements
 
-- Powered by the [OpenAI API](https://platform.openai.com)
-- Built with [Jinja2](https://jinja.palletsprojects.com/) and [LaTeX](https://www.latex-project.org)
+- Powered by the [OpenAI API](https://platform.openai.com)  
+- Built using [Jinja2](https://jinja.palletsprojects.com/) and [LaTeX](https://www.latex-project.org)
 
 ---
 
-🎯 Build your best CV and cover letter — ready to impress recruiters and beat the bots.
+🎯 Build your best CV and cover letter — optimized for ATS, ready for humans.
